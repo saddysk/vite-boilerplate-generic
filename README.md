@@ -2,28 +2,30 @@
 
 Frontend Boilerplate on VITE
 
-
 ## HIGH CODING STANDARDS
 
-1. Remove any unncessary packages from the project that we are not using
-2. Remove any unncessary imports in any file, any unnecessary images or files or any code piece that is not being used anywhere
-3. Use proper dynamic loading, suspense boundaries etc. (basics)
-4. Modular Design: Clear separation between /components, /containers, /modules, /utils, /api
-5. Layered Architecture: Containers handle logic, components handle presentation
-6. Folder Structure
+1.  Remove any unncessary packages from the project that we are not using
+2.  Remove any unncessary imports in any file, any unnecessary images or files or any code piece that is not being used anywhere
+3.  Use proper dynamic loading, suspense boundaries etc. (basics)
+4.  Modular Design: Clear separation between /components, /containers, /modules, /utils, /api
+5.  Layered Architecture: Containers handle logic, components handle presentation
+6.  Folder Structure
+
     src/
-    ├── api/           # Auto-generated API clients
-    ├── components/    # Reusable UI components
-    ├── containers/    # Business logic containers
-    ├── modules/       # Domain modules (auth, axios)
-    ├── routes/        # Route configuration
-    ├── store/         # Query key factories
-    ├── utils/         # Pure utility functions
-    ├── views/         # Page-level components
-    └── types/         # TypeScript definitions
-7. Vite Config: Optimized with plugins (React, SVGR, Visualizer)
-8. Clean imports with @/ and @ui/ shortcuts
-9. Bundle analysis: Rollup visualizer for optimization
+
+         ├── api/         # Auto-generated API clients
+         ├── components/  # Reusable UI components
+         ├── containers/  # Business logic containers
+         ├── modules/     # Domain modules (auth, axios)
+         ├── routes/      # Route configuration
+         ├── store/       # Query key factories
+         ├── utils/       # Pure utility functions
+         ├── views/       # Page-level components
+         └── types/       # TypeScript definitions
+
+7.  Vite Config: Optimized with plugins (React, SVGR, Visualizer)
+8.  Clean imports with @/ and @ui/ shortcuts
+9.  Bundle analysis: Rollup visualizer for optimization
 10. UI library - shadcn
 11. Constate Pattern: Clean state sharing with React Context
 12. Using tanstack react query for fetching data and state management
@@ -31,54 +33,51 @@ Frontend Boilerplate on VITE
     - JWT Token Management: Secure token storage with automatic refresh
     - Auth Context: Centralized authentication state with constate
     - Higher-Order Components: Authentication wrappers, etc as per the requirements
-      * `withIsAuthenticated`: Injects boolean `isAuth` prop for simple auth status checks
-      * `withAuthUser`: Injects complete `authUser` object for accessing user data
+      - `withIsAuthenticated`: Injects boolean `isAuth` prop for simple auth status checks
+      - `withAuthUser`: Injects complete `authUser` object for accessing user data
     - HOC Usage Guidelines:
-      * Use `withIsAuthenticated` for conditional rendering based on auth status only
-      * Use `withAuthUser` when components need access to user profile data
-      * Both HOCs return null/false states for unauthenticated users
-      * Example: `withIsAuthenticated` for login/logout buttons, `withAuthUser` for user dashboards
-15. API Architecture
+      - Use `withIsAuthenticated` for conditional rendering based on auth status only
+      - Use `withAuthUser` when components need access to user profile data
+      - Both HOCs return null/false states for unauthenticated users
+      - Example: `withIsAuthenticated` for login/logout buttons, `withAuthUser` for user dashboards
+14. API Architecture
     - Swagger TypeScript API: Generated from OpenAPI specs
     - Type-Safe HTTP Client: Axios with full TypeScript support
     - Modular API Classes: Organized by domain (User, Organization, Payment)
     - Interceptors: Global error handling and authentication
-16. Comprehensive Linting Setup
+15. Comprehensive Linting Setup
     - ESLint: React, TypeScript, and Tailwind-specific rules
     - Prettier: Consistent code formatting
     - Husky: Pre-commit hooks for quality gates
     - lint-staged: Only lint changed files
-17. TypeScript Excellence
+16. TypeScript Excellence
     - Strict Mode: Maximum type safety
     - Generic Components: Reusable typed components
     - Utility Types: Leverage TypeScript's utility types
     - Ambient Declarations: Proper module typing
-18. Environment Management
+17. Environment Management
     - Envalid: Runtime environment validation
     - Type-Safe Config: Environment variables with TypeScript
     - Multi-Environment: Test, development, production configurations
-19. Loading & Code Splitting
+18. Loading & Code Splitting
     - Loadable Components: Dynamic imports for route-based splitting
     - React.memo: Memoization for expensive components
     - useMemo/useCallback: Optimized hook usage
     - Query Optimizations: Stale-while-revalidate patterns
-20. Monitoring (Sentry): Error tracking and performance monitoring
-21. Form Management
+19. Monitoring (Sentry): Error tracking and performance monitoring
+20. Form Management
     - React Hook Form: Performance-optimized forms
     - Zod Validation: Schema-based validation
-22. Date Utilities: Using date-fns for date handling
-23. Use svgr for use svg images as react components. Use Image tag components as less as possible
-
-
-
+21. Date Utilities: Using date-fns for date handling
+22. Use svgr for use svg images as react components. Use Image tag components as less as possible
 
 ### Query Functions file structure
+
 src/store
+
     ├── index.ts
     ├── api.ts
     └── user-query.ts
-
-
 
 ### Naming Conventions
 
@@ -92,7 +91,6 @@ src/store
 - Folders should be named in kebab-case, e.g. `my-folder`
 - Functions should be named in camelCase, e.g. `myFunction.ts`
 - If creating a component of certain parent component the file name and component name should be ParentComponentName followed by component name in PascalCase, e.g. ModalShare.tsx (here modal is the parent component and share is the child component)
-
 
 ### Code Style
 
@@ -108,4 +106,5 @@ src/store
 - Use const for functions, e.g. `const add = (a, b) => a + b` instead of `let add = (a, b) => a + b`
 
 ### More
+
 - Use framer motion for animations if required
